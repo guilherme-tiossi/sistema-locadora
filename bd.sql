@@ -7,6 +7,7 @@ CREATE TABLE `tbusuarios` (
  `nome_user` varchar(100) NOT NULL,
  `email_user` varchar(100) NOT NULL,
  `senha_user` varchar(100) NOT NULL,
+ `adm` tinyint(1) NOT NULL,
  PRIMARY KEY (`id_user`),
  UNIQUE KEY `email_user` (`email_user`)
 );
@@ -24,4 +25,6 @@ CREATE TABLE `tbfilmes`(
     PRIMARY KEY (`id_filme`),
     KEY `fk_idgenero` (`idgenero`),
     CONSTRAINT `fk_idgenero` FOREIGN KEY (`idgenero`) REFERENCES `tbgeneros` (`id_genero`)
-)
+);
+
+insert into tbusuarios (nome_user, email_user, senha_user, adm) values ('Renato Pereira', 'renatopereira@email.com', 'senharenato', '1'); 
