@@ -13,5 +13,5 @@ else{
 $stmt = $pdo->prepare("insert into tbgeneros values ('', '$genero')");
 $stmt->execute();
 }
-header("Location: home.php");
+header("Location: home_adm.php");
 ?>

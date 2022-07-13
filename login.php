@@ -4,7 +4,6 @@ include("conexao.php");
 
 if(isset($_SESSION['email'])){
 $email = $_SESSION['email'];
-$senha = $_SESSION['senha'];
 $stmt = $pdo->prepare("select * from tbusuarios where email_user = '$email' and senha_user = '$senha'");$stmt->execute();
 $count = $stmt->rowCount();
 

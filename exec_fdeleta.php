@@ -4,5 +4,5 @@ $id = $_GET['id'];
 
 $stmt = $pdo->prepare("delete from tbfilmes where id_filme = '$id' ");
 $stmt->execute();
-header("Location: home.php");
+header("Location: home_adm.php");
 ?>
