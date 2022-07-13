@@ -4,6 +4,21 @@ include("verificacao_adm.php");
 
 echo $nome . "<br>" . $email . "<br>";
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="script.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+
 <a href="logout.php"> Sair </a>
 <h1> CADASTRO DE GENEROS </h1>
 <br>
@@ -138,13 +153,18 @@ $count = $stmt->rowCount();
             echo "<tbody> 
                 <td> $row[0] </td>
                 <td> $row[1] </td>
-                <td> <a href='exec_addadm.php?id=$row[0]'> Tornar Administrador </a> </td>
+                <td> <button class='open-button' onclick='openForm()'> Tornar Administrador </button> <td>
                 <td> <a href='exec_addedit.php?id=$row[0]'> Tornar Editor </a> </td>
             </tbody> </table>";
-            echo "<tr>";
-        }
 
+            echo "<div class='form-popup' id='myForm'>
+            <h3> Você tem certeza que quer adicionar $row[1] ao cargo de Administrador(a)? </h3>
+            <p> Ao adicionar $row[1] como administrador(a) ele(a) terá acesso à TODAS as mesmas funções que você tem, inclusive a de remover seu cargo de administrador. </p>
+            <button onclick='closeForm()'> Cancelar </button>
+            <a href='exec_addadm.php?id=$row[0]'> Adicionar $row[1] como Administrador(a) </button>
+          </div>";
+          echo "<tr>";
+        }
     }
 }
 ?>
-
