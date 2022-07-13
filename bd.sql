@@ -13,7 +13,7 @@ CREATE TABLE `tbusuarios` (
 );
 
 CREATE TABLE `tbgeneros` (
-  `id_genero` int(11) NOT NULL AUTO_INCREMENT,
+  `id_genero` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `genero` varchar(50) NOT NULL,
   PRIMARY KEY (`id_genero`)
 );
@@ -21,10 +21,10 @@ CREATE TABLE `tbgeneros` (
 CREATE TABLE `tbfilmes`(
     `id_filme` int(11) NOT NULL AUTO_INCREMENT,
     `titulo_filme` varchar(100) NOT NULL,
-    `idgenero` int(11) NOT NULL,
+    `id_genero` int(11) NOT NULL,
     PRIMARY KEY (`id_filme`),
-    KEY `fk_idgenero` (`idgenero`),
-    CONSTRAINT `fk_idgenero` FOREIGN KEY (`idgenero`) REFERENCES `tbgeneros` (`id_genero`)
+    KEY `fk_idgenero` (`id_genero`),
+    CONSTRAINT `fk_idgenero` FOREIGN KEY (`id_genero`) REFERENCES `tbgeneros` (`id_genero`)
 );
 
 insert into tbusuarios (nome_user, email_user, senha_user, adm) values ('Renato Pereira', 'renatopereira@email.com', 'senharenato', '1'); 
