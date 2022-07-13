@@ -1,6 +1,5 @@
 <?php
 include ("conexao.php");
-include ("verificacao.php");
 
 $genero = $_POST['tx_genero'];
 $id = $_POST['hd_id'];
