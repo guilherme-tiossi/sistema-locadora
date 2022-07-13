@@ -4,6 +4,7 @@ include("verificacao_adm.php");
 
 echo $nome . "<br>" . $email . "<br>";
 ?>
+<a href="logout.php"> Sair </a>
 <h1> CADASTRO DE GENEROS </h1>
 <br>
 <form action="exec_genero.php" method="POST"> 
@@ -96,25 +97,54 @@ echo $nome . "<br>" . $email . "<br>";
 <table>
     <thead>
     <th> Id </th>
-    <th> Admin </th>
-    <th> Editar </th>
+    <th> Nome </th>
+    <th> Status </th>
     <th> Excluir </th>
     </thead>
     <tbody>
 <?php
-    $stmt=$pdo->prepare("select * from tbusuarios where adm = 1");
+    $stmt=$pdo->prepare("select * from tbusuarios where adm = 1 || adm = 2 order by adm desc");
     $stmt->execute();
     while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
+        
         echo "<td> $row[0] </td>";
         echo "<td> $row[1] </td>";
-        echo "<td> <a href='?id=$row[0] </td>";
-        echo "<td> $row[0] </td>";
+        echo "<td> $row[4] </td>";
+        echo "<td> <a href='exec_admdeleta.php?id=$row[0]'> Excluir </td>";
+        echo "<tr>";
     }
-
-
 ?>
     <td> </td>
     </tbody>
 </table>
 
-<a href="logout.php"> Sair </a>
+<h1> ADICIONE ADMINISTRADORES OU EDITORES </h1>
+<form method="post" action="">
+    <label> Pesquisar Usuário: </label>
+    <input type="text" name="usuario"/>
+    <input type="submit" value="Pesquisar"/>
+</form>
+
+<?php
+if (isset($_POST['usuario'])){
+$usuario = $_POST['usuario']; 
+$stmt = $pdo->prepare("select * from tbusuarios where nome_user like '%$usuario%'");
+$stmt->execute();
+$count = $stmt->rowCount();
+
+    if ($count > 0){
+        foreach ($stmt as $row){
+            echo "<table> <thead> <th> Id_User </th><th> Usuario </th> <th> Adicionar como ADM </th> <th> Adicionar como EDITOR </th> </thead>";
+            echo "<tbody> 
+                <td> $row[0] </td>
+                <td> $row[1] </td>
+                <td> <a href='exec_addadm.php?id=$row[0]'> Tornar Administrador </a> </td>
+                <td> <a href='exec_addedit.php?id=$row[0]'> Tornar Editor </a> </td>
+            </tbody> </table>";
+            echo "<tr>";
+        }
+
+    }
+}
+?>
+
