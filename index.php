@@ -1,6 +1,6 @@
 
 <html>
-<a href="cadastro.php"> 69899 </a>
+<a href="cadastro.php"> Cadastro </a>
 </html
 <?php
 
