@@ -23,7 +23,7 @@ echo $nome . "<br>" . $email . "<br>";
 <h1> CADASTRO DE GENEROS </h1>
 <br>
 <form action="exec_genero.php" method="POST"> 
-    <input type="hidden" name="hd_id" value="<?php echo 0 + @$_GET['id']?>"> </input>
+    <input type="hidden" name="hd_idgenero" value="<?php echo 0 + @$_GET['idgenero']?>"> </input>
     <input type="text" name="tx_genero" value="<?php echo @$_GET['genero']?>"> </input> <br>
     <br>
     <input type="submit" value="Enviar">
@@ -40,13 +40,13 @@ echo $nome . "<br>" . $email . "<br>";
 </thead>
 <tbody>
 <?php
-    $stmt=$pdo->prepare("select * from tbgeneros");
+    $stmt=$pdo->prepare("SELECT * FROM tbgeneros");
     $stmt->execute();
     while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
         echo "<tr>";				
             echo "<td>$row[0] </td>";
             echo "<td>$row[1] </td>";
-            echo "<td> <a href='?id=$row[0]&genero=$row[1]'> Editar </td>";					
+            echo "<td> <a href='?idgenero=$row[0]&genero=$row[1]'> Editar </td>";					
             echo "<td>";
                 echo "<a href='exec_gdeleta.php?id=$row[0]&genero=$row[1]'>Excluir</a>";
             echo "</td>";
@@ -56,16 +56,15 @@ echo $nome . "<br>" . $email . "<br>";
     </tbody>
 </table>
 
-
 <br>
 <h1> CADASTRO DE FILMES </h1>
 <br>
 <form action="exec_filme.php" method="POST" id="form_filme">
-    <input type="hidden" name= "hd_id" value="<?php echo 0 + @$_GET['id'] ?>" />
+    <input type="hidden" name= "hd_idfilme" value="<?php echo 0 + @$_GET['idfilme'] ?>" />
     <input type="text" name=tx_filme value="<?php echo @$_GET['filme'] ?> "> </input>
-    <select name="slct_genero" form="form_filme" value="<?php echo @$_GET['genero']?>">
+    <select name="slct_genero" form="form_filme" value="<?php echo @$_GET['f_genero']?>">
     <?php 
-    $stmt=$pdo->prepare("select genero from tbgeneros");
+    $stmt=$pdo->prepare("SELECT genero FROM tbgeneros");
     $stmt->execute();
     foreach ($stmt as $row){
         $genero = $row['genero'];
@@ -90,7 +89,7 @@ echo $nome . "<br>" . $email . "<br>";
 </thead>
 <tbody>
 <?php
-    $stmt=$pdo->prepare("select tbfilmes.id_filme, tbfilmes.titulo_filme, tbgeneros.genero from tbfilmes join tbgeneros on tbgeneros.id_genero = tbfilmes.id_genero");
+    $stmt=$pdo->prepare("SELECT tbfilmes.id_filme, tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme");
                       // select produto.idProduto, produto.produto, categoria.categoria from produto join categoria on categoria.idCategoria = produto.idCategoria
     $stmt->execute();
     while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
@@ -98,7 +97,7 @@ echo $nome . "<br>" . $email . "<br>";
             echo "<td>$row[0] </td>";
             echo "<td>$row[1] </td>";
             echo "<td>$row[2] </td>";
-            echo "<td> <a href='?id=$row[0]&filme=$row[1]&genero=$row[2]'> Editar </td>";					
+            echo "<td> <a href='?idfilme=$row[0]&filme=$row[1]&f_genero=$row[2]'> Editar </td>";					
             echo "<td>";
                 echo "<a href='exec_fdeleta.php?id=$row[0]'>Excluir</a>";
             echo "</td>";
@@ -118,7 +117,7 @@ echo $nome . "<br>" . $email . "<br>";
     </thead>
     <tbody>
 <?php
-    $stmt=$pdo->prepare("select * from tbusuarios where adm = 1 || adm = 2 order by adm desc");
+    $stmt=$pdo->prepare("SELECT * FROM tbusuarios WHERE adm = 1 || adm = 2 ORDER BY adm DESC");
     $stmt->execute();
     while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
         
@@ -143,7 +142,7 @@ echo $nome . "<br>" . $email . "<br>";
 <?php
 if (isset($_POST['usuario'])){
 $usuario = $_POST['usuario']; 
-$stmt = $pdo->prepare("select * from tbusuarios where nome_user like '%$usuario%'");
+$stmt = $pdo->prepare("SELECT * FROM tbusuarios WHERE nome_user LIKE '%$usuario%'");
 $stmt->execute();
 $count = $stmt->rowCount();
 

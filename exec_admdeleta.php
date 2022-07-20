@@ -1,7 +1,7 @@
 <?php
 include("conexao.php");
 $usuario = $_GET['id'];
-$stmt = $pdo->prepare("update tbusuarios set adm = 0 where id_user = '$usuario'");
+$stmt = $pdo->prepare("UPDATE tbusuarios SET adm = 0 WHERE id_user = '$usuario'");
 $stmt->execute();
 
 header("Location: home_adm.php");

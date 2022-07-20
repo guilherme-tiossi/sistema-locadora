@@ -3,7 +3,7 @@ session_start();
 include("conexao.php");
 $email = $_SESSION['email'];
 $senha = $_SESSION['senha'];
-$stmt = $pdo->prepare("select * from tbusuarios where email_user = '$email' and senha_user = '$senha'");
+$stmt = $pdo->prepare("SELECT * FROM tbusuarios WHERE email_user = '$email' and senha_user = '$senha'");
 $stmt->execute();
 $count = $stmt->rowCount();
 

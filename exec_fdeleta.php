@@ -2,7 +2,7 @@
 include("conexao.php");
 $id = $_GET['id'];
 
-$stmt = $pdo->prepare("delete from tbfilmes where id_filme = '$id' ");
+$stmt = $pdo->prepare("DELETE FROM tbfilmes WHERE id_filme = '$id' ");
 $stmt->execute();
 header("Location: home_adm.php");
 ?>
