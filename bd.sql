@@ -24,7 +24,7 @@ CREATE TABLE `tbfilmes`(
     `id_genero` int(11) NOT NULL,
     PRIMARY KEY (`id_filme`),
     KEY `fk_idgenero` (`id_genero`),
-    CONSTRAINT `fk_idgenero` FOREIGN KEY (`id_genero`) REFERENCES `tbgeneros` (`id_genero`)
+    CONSTRAINT `fk_idgenero` FOREIGN KEY (`id_genero`) REFERENCES `tbgeneros` (`id_genero`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 insert into tbgeneros (genero) values
