@@ -1,6 +1,8 @@
 <?php
 include("conexao.php");
 
+$adm = $_GET['adm'];
+
 function exibirGeneros(){
     global $pdo;
     $stmt=$pdo->prepare("SELECT * FROM tbgeneros");
@@ -54,16 +56,28 @@ function exibirAdmins(){
     <th> Id </th>
     <th> Nome </th>
     <th> Status </th>
+    <th> Alterar </th>
     <th> Excluir </th>
     </thead> <tbody>";
     while($row = $stmt ->fetch(PDO::FETCH_BOTH)){
         echo "<tr> <td> $row[0] </td>
               <td> $row[1] </td>
-              <td> $row[4] </td>
-              <td> <a href='exec_admdeleta.php?id=$row[0]'> Excluir </td> </tr>";
+              <td> $row[4] </td>";
+    if($row[4] == 2){
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]'> Tornar Editor";
+    }
+    if($row[4] == 1){
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]'> Tornar Administrador </td>";
+    }
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]&x=1'> Excluir </td> </tr>";
               //COLOCAR OPÇÃO DE ALTERNAR PARA ADM/EDITOR DEPENDENDO DO STATUS ATUAL
     }
-    echo "</tr> </tbody> </table>";
+    echo "</tbody> </table>";
 }
-
 ?>
+
+
+
+
+
+

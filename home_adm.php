@@ -65,7 +65,7 @@ $count = $stmt->rowCount();
             <h3> Você tem certeza que quer adicionar $row[1] ao cargo de Administrador(a)? </h3>
             <p> Ao adicionar $row[1] como administrador(a) ele(a) terá acesso à TODAS as mesmas funções que você tem, inclusive a de remover seu cargo de administrador. </p>
             <button onclick='closeForm()'> Cancelar </button>
-            <a href='exec_addadm.php?id=$row[0]'> Adicionar $row[1] como Administrador(a) </button>
+            <a href='exec_altStatusUsuario.php?id=$row[0]?adm=$row[5]'> Adicionar $row[1] como Administrador(a) </button>
           </div>";
           echo "<tr>";
         }
