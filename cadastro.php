@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="script.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>LocaCult</title>
+    </head>
+
 <?php
 session_start();
 include("conexao.php");
@@ -37,15 +48,21 @@ else if ($count ==1 && $adm == 0){
     exit();
 }
 }
-?>
-
-<html>
+?>  <div class="center-screen">
+    <h2 class="titulo">💿 CADASTRE-SE</h2>
+    <div class="form">
     <form action="exec_cadastro.php" METHOD="POST">
-    <input type="text" name="nome">
-    <input type="email" name="email">
-    <input type="password" name="senha">
-    <input type="submit"> 
+    <label>Nome</label> <br>
+    <input type="text" name="nome"> <br>
+    <label>E-mail</label> <br>
+    <input type="email" name="email"> <br>
+    <label>Senha</label> <br>
+    <input type="password" name="senha"> <br>
+    <button type="submit" class="btn btn-primary"> Cadastrar </button> 
     </form>
+    </div>
+    </div>
     <a href="login.php"> Login </a>
+
 
 </html>

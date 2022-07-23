@@ -11,7 +11,7 @@ echo "Bem vindo(a), " . $nome . "<br>";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <script src="script.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <title>LocaCult</title>
 <a href="logout.php"> Sair </a>
 </head>
