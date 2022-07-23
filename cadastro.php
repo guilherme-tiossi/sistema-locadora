@@ -58,11 +58,9 @@ else if ($count ==1 && $adm == 0){
     <input type="email" name="email"> <br>
     <label>Senha</label> <br>
     <input type="password" name="senha"> <br>
+    <a href="login.php"> Já tenho uma conta </a> <br>
     <button type="submit" class="btn btn-primary"> Cadastrar </button> 
     </form>
     </div>
     </div>
-    <a href="login.php"> Login </a>
-
-
 </html>

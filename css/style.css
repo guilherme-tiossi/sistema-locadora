@@ -1,5 +1,5 @@
 body{
-  background-color: #9486c3;
+  background:#8b7cbd;
 }
 
 
@@ -7,19 +7,19 @@ body{
   border-width: 1px;
   border-style: solid;
   border-color: #black;
-  background-color: #e6e5ea;
   justify-content: center;
-  min-height: 70vh;
-  margin: 20vh;
+  min-height: 55vh;
+  margin: 10vh;
   margin-right: 70vh;
   margin-left: 70vh;
   background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
-
+  margin-bottom: 1%;
 }
 
 .form{
   margin-right: 20%;
   margin-left: 20%;
+  margin-bottom:5%;
 }
 
 input{
@@ -47,5 +47,10 @@ button{
 
 h2, label{
   font-weight: lighter;
+  font-family: "Tahoma", sans-serif;
+
+}
+
+a{
   font-family: "Tahoma", sans-serif;
 }
