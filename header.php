@@ -2,7 +2,6 @@
 include("conexao.php");
 include("verificacao_adm.php");
 include("functions.php");
-echo "Bem vindo(a), " . $nome . "<br>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +12,8 @@ echo "Bem vindo(a), " . $nome . "<br>";
     <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>LocaCult</title>
-<a href="logout.php"> Sair </a>
+    <p> Bem vindo(a), <?php echo $nome ?></p>
+    <a href="logout.php"> Sair </a>
+    <div class= "div1"> </div>
 </head>
 

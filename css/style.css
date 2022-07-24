@@ -4,9 +4,7 @@ body{
 
 
 .center-screen {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #black;
+  border: 1px solid black;
   justify-content: center;
   min-height: 55vh;
   margin: 10vh;
@@ -17,16 +15,16 @@ body{
 }
 
 .center-screen2 {
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   border-color: #black;
   justify-content: center;
-  min-height: 55vh;
-  margin: 10vh;
-  margin-right: 50vh;
-  margin-left: 50vh;
+  float: left;
+  width: 45%;
+  height: 100%;
+  margin: 5vh;
   background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
-  margin-bottom: 1%;
+  margin-bottom: 10vh;
 }
 
 .form{
@@ -38,7 +36,6 @@ body{
 .form2{
   margin-right: 20%;
   margin-left: 20%;
-  margin-bottom:2.5%;
 }
 
 input{
@@ -66,6 +63,7 @@ button{
   width: 40vh;
   height: 10vh;
   margin-left: 20%;
+  font-size: 25px;
 }
 
 .titulo{
@@ -84,11 +82,12 @@ button{
   padding-left: 1vh;
   padding-top: 1vh;
   padding-bottom: 0.5vh;
+  margin-bottom: 0vh;
   border-top-width: 1px;
   border-top-style: solid;
   border-bottom-color: black;
   border-bottom-width: 1px;
-  border-bottom-style: solid;
+  border-bottom-style: dotted;
   border-bottom-color: black;  
 }
 
@@ -102,26 +101,146 @@ a{
   font-family: "Tahoma", sans-serif;
 }
 
-.tabelageneros {
+.tabela {
   font-family: "Tahoma", sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.tabelageneros td, .tabelageneros th {
-  border: 1px solid black;
+.tabela td, .tabela th {
+  border-top: 1px solid black;
   padding: 5px;
 }
 
-.tabelageneros tr:hover {
+.tabela tr:hover {
   background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
 }
 
-.tabelageneros tr{
+.tabela tr{
   background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
 }
 
-.tabelageneros th {
+.tabela th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
+
+.filmesmenos {
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.filmesmenos td, .filmesmenos th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.filmesmenos tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.filmesmenos tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.filmesmenos th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
+.filmesmais {
+  display: none;
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.filmesmais td, .filmesmais th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.filmesmais tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.filmesmais tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.filmesmais th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
+
+.generosmenos {
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.generosmenos td, .filmesmenos th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.generosmenos tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.generosmenos tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.generosmenos th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
+.generosmais {
+  display: none;
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.generosmais td, .generosmais th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.generosmais tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.generosmais tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.generosmais th {
   font-family: "Tahoma", sans-serif;
   font-weight: bold;
   padding-top: 12px;

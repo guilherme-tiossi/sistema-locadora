@@ -18,8 +18,8 @@
 </div>
 
 <div class="center-screen2">
-<h1> CADASTRO DE FILMES </h1>
-<div class="form">
+<h2 class="titulo"> CADASTRO DE FILMES </h2>
+<div class="form2">
         <form action="exec_filme.php" method="POST" id="form_filme">
         <input class="input2" type="hidden" name= "hd_idfilme" value="<?php echo 0 + @$_GET['idfilme'] ?>" />
         <input class="input2" type="text" name=tx_filme value="<?php echo @$_GET['filme'] ?> "> </input>
@@ -31,12 +31,11 @@
             $genero = $row['genero'];?> 
             <option value="<?php echo $row['genero']; ?>"> <?php echo $row['genero']; ?> </option> <?php }; ?>
         </select> <br>
-        <input type="submit" value="Enviar">
+        <button class="button2" type="submit"> Cadastrar Filme </button>
     </form>
 </div>
-    <h2> FILMES CADASTRADOS </h2>
+    <h2 class='titulo2'> FILMES CADASTRADOS </h2>
     <?php exibirFilmes(); ?>	
-    <br>
 </div>
 
 <div class="center-screen2">
