@@ -2,23 +2,27 @@
     include("header.php");
 ?>
 <body>
-<h1> CADASTRO DE GENEROS </h1>
-<br>
+<div class="center-screen2">
+<h2 class="titulo"> CADASTRO DE GÊNEROS </h2>
+<div class="form2">
     <form action="exec_genero.php" method="POST"> 
-        <input type="hidden" name="hd_idgenero" value="<?php echo 0 + @$_GET['idgenero']?>"> </input>
-        <input type="text" name="tx_genero" value="<?php echo @$_GET['genero']?>"> </input> <br>
-        <input type="submit" value="Enviar">
+        <input class="input2" type="hidden" name="hd_idgenero" value="<?php echo 0 + @$_GET['idgenero']?>"> </input>
+        <input class="input2" type="text" name="tx_genero" value="<?php echo @$_GET['genero']?>"> </input>
+        <button class="button2" type="submit"> Cadastrar Gênero </button>
     </form>
-
-    <h2> GÊNEROS CADASTRADOS </h2>
+</div>
+    <h2 class="titulo2"> GÊNEROS CADASTRADOS </h2>
+<div class="lista">
     <?php exibirGeneros(); ?>
-    <br>
+</div>
+</div>
 
+<div class="center-screen2">
 <h1> CADASTRO DE FILMES </h1>
-<br>
-    <form action="exec_filme.php" method="POST" id="form_filme">
-        <input type="hidden" name= "hd_idfilme" value="<?php echo 0 + @$_GET['idfilme'] ?>" />
-        <input type="text" name=tx_filme value="<?php echo @$_GET['filme'] ?> "> </input>
+<div class="form">
+        <form action="exec_filme.php" method="POST" id="form_filme">
+        <input class="input2" type="hidden" name= "hd_idfilme" value="<?php echo 0 + @$_GET['idfilme'] ?>" />
+        <input class="input2" type="text" name=tx_filme value="<?php echo @$_GET['filme'] ?> "> </input>
         <select name="slct_genero" form="form_filme" value="<?php echo @$_GET['f_genero']?>">
         <?php 
             $stmt=$pdo->prepare("SELECT genero FROM tbgeneros");
@@ -29,11 +33,13 @@
         </select> <br>
         <input type="submit" value="Enviar">
     </form>
-
+</div>
     <h2> FILMES CADASTRADOS </h2>
     <?php exibirFilmes(); ?>	
     <br>
+</div>
 
+<div class="center-screen2">
 <h1> ADICIONE ADMINISTRADORES OU EDITORES </h1>
     <form method="post" action="">
         <label> Pesquisar Usuário: </label>
@@ -44,6 +50,7 @@
     <h1> LISTA DE ADMINS </h1>
     <?php exibirAdmins(); ?>
     <br>
+</div>
 <?php
 if (isset($_POST['usuario'])){
 $usuario = $_POST['usuario']; 

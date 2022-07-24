@@ -16,10 +16,29 @@ body{
   margin-bottom: 1%;
 }
 
+.center-screen2 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #black;
+  justify-content: center;
+  min-height: 55vh;
+  margin: 10vh;
+  margin-right: 50vh;
+  margin-left: 50vh;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
+  margin-bottom: 1%;
+}
+
 .form{
   margin-right: 20%;
   margin-left: 20%;
   margin-bottom:5%;
+}
+
+.form2{
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-bottom:2.5%;
 }
 
 input{
@@ -28,11 +47,25 @@ input{
   margin-bottom: 2vh;
 }
 
+.input2{
+  font-size:24px;
+  width: 70vh;
+  height: 9vh;
+  margin-bottom: 2vh;
+}
+
 button{
   margin-top: 2vh;
   width: 40vh;
   height: 10vh;
   margin-left: 10%;
+}
+
+.button2{
+  margin-top: 0vh;
+  width: 40vh;
+  height: 10vh;
+  margin-left: 20%;
 }
 
 .titulo{
@@ -45,12 +78,54 @@ button{
   border-bottom-color: black;  
 }
 
+.titulo2{
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+  margin-top: 1vh;
+  padding-left: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 0.5vh;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: black;  
+}
+
+
 h2, label{
   font-weight: lighter;
   font-family: "Tahoma", sans-serif;
-
 }
 
 a{
   font-family: "Tahoma", sans-serif;
+}
+
+.tabelageneros {
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabelageneros td, .tabelageneros th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.tabelageneros tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.tabelageneros tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.tabelageneros th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
 }

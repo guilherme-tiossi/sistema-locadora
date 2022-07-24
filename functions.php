@@ -7,7 +7,7 @@ function exibirGeneros(){
     global $pdo;
     $stmt=$pdo->prepare("SELECT * FROM tbgeneros");
     $stmt->execute();
-        echo "<table>
+        echo "<table class='tabelageneros'>
 <thead>
     <th> Id </th>
     <th> Gênero </th>
