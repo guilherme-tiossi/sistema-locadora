@@ -50,7 +50,7 @@ else if ($count ==1 && $adm == 0){
     <label>Senha</label> <br>
     <input type="password" name="senha">
  <a href="cadastro.php"> Não tenho uma conta </a> <br>
-    <button type="submit" class="btn btn-primary"> Login </button> 
+    <button type="submit" class="button1"> Login </button> 
 </form>
 </div>
 </div>

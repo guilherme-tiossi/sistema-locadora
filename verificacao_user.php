@@ -19,11 +19,11 @@ foreach ($stmt as $row){
     $nome = $row['nome_user'];
 }
 
-if ($count == 1 && $adm == 0){
+if ($count == 1 && $adm == 2){
     $_SESSION['email_user'] = $email;
     $_SESSION['senha_user'] = $senha;
     $_SESSION['id_user'] = $id;
-    header("Location: home_user.php");
+    header("Location: home_adm.php");
     exit();
 }
 
