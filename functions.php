@@ -56,7 +56,8 @@ function exibirFilmes(){
     <th> Gênero </th>
     <th> Editar </th>
     <th> Excluir </th>
-    </thead> <tbody>";
+    </thead>
+    <tbody>";
     while ($row = $stmt ->fetch(PDO::FETCH_BOTH)){
         echo "<tr> <td>$row[0]</td> 
               <td>$row[1]</td> 
@@ -91,8 +92,8 @@ function exibirAdmins(){
     global $pdo;
     $stmt=$pdo->prepare("SELECT * FROM tbusuarios WHERE adm = 1 || adm = 2 ORDER BY adm DESC");
     $stmt->execute();
-    echo "<table>
-    <thead>
+    echo "<div class='adminsmais'>
+    <table class='tabela'> <thead>
     <th> Id </th>
     <th> Nome </th>
     <th> Status </th>
@@ -104,15 +105,15 @@ function exibirAdmins(){
               <td> $row[1] </td>
               <td> $row[4] </td>";
     if($row[4] == 2){
-        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]'> Tornar Editor";
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&x=1'> Tornar Editor";
     }
     if($row[4] == 1){
-        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]'> Tornar Administrador </td>";
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&x=2'> Tornar Administrador </td>";
     }
-        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&adm=$row[4]&x=1'> Excluir </td> </tr>";
+        echo "<td> <a href='exec_altStatusUsuario.php?id=$row[0]&x=0'> Excluir </td>";
               //COLOCAR OPÇÃO DE ALTERNAR PARA ADM/EDITOR DEPENDENDO DO STATUS ATUAL
     }
-    echo "</tbody> </table>";
+    echo " </tr> </tbody> </table> </div>";
 }
 ?>
 

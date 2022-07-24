@@ -27,6 +27,19 @@ body{
   margin-bottom: 10vh;
 }
 
+.center-screen3 {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #black;
+  justify-content: center;
+  float: left;
+  width: 45%;
+  height: 100%;
+  margin: 5vh;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
+  margin-bottom: 10vh;
+}
+
 .form{
   margin-right: 20%;
   margin-left: 20%;
@@ -51,7 +64,7 @@ input{
   margin-bottom: 2vh;
 }
 
-button{
+.button1{
   margin-top: 2vh;
   width: 40vh;
   height: 10vh;
@@ -190,6 +203,36 @@ a{
 }
 
 
+.generosmais {
+  display: none;
+  font-family: "Tahoma", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.generosmais td, .generosmais th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.generosmais tr:hover {
+  background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
+}
+
+.generosmais tr{
+  background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
+}
+
+.generosmais th {
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
 .generosmenos {
   font-family: "Tahoma", sans-serif;
   border-collapse: collapse;
@@ -219,32 +262,35 @@ a{
   background-image: linear-gradient(#e6e5ea, #c2c1ca);
 }
 
-.generosmais {
-  display: none;
+.adminsmais {
   font-family: "Tahoma", sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.generosmais td, .generosmais th {
+.adminsmais td, .adminsmais th {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   padding: 5px;
 }
 
-.generosmais tr:hover {
+.adminsmais tr:hover {
   background-image: linear-gradient(#d6d5dc, #ececf7, #d6d5dc)
 }
 
-.generosmais tr{
+.adminsmais tr{
   background-image: linear-gradient(#d6d5dc, #e2e1ea, #d6d5dc)
 }
 
-.generosmais th {
+.adminsmais th {
   font-family: "Tahoma", sans-serif;
   font-weight: bold;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-image: linear-gradient(#e6e5ea, #c2c1ca);
+}
+
+.form-popup {
+  display: none;
 }
