@@ -12,12 +12,15 @@ include("functions.php");
     <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>LocaCult</title>
-    <p> Bem vindo(a), <?php echo $nome ?></p>
+    <div class="center-screenzero"> 
+    <h2 class="titulo"> Bem vindo(a), <?php echo $nome ?></h2>
+    <p> Você é um administrador do sistema da LOCACULT </p>
     <a href="logout.php"> Sair </a>
-    <div class= "div1"> </div>
+    </div>
 </head>
 
 <body>
+<div class="filmeEgenero">
 <div class="center-screen2">
 <h2 class="titulo"> CADASTRO DE GÊNEROS </h2>
 <div class="form2">
@@ -53,17 +56,17 @@ include("functions.php");
     <h2 class='titulo2'> FILMES CADASTRADOS </h2>
     <?php exibirFilmes(); ?>	
 </div>
-
-<div class="center-screen2">
-<h2 class='titulo'> ADICIONE ADMINISTRADORES OU EDITORES </h2>
+<div class="center-screen3">
+<h2 class='titulo'> ADD ADMINS OU EDITORES </h2>
 <div class="form2">
     <form method="post" action="">
-        <input type="text" name="usuario"/>
-        <input type="submit" value="Pesquisar"/>
+        <input class="input2" type="text" name="usuario"/>
+        <input class="input2" type="submit" value="Pesquisar"/>
     </form>
 </div>
     <h2 class='titulo2'> LISTA DE ADMINS </h2>
     <?php exibirAdmins(); ?>
+</div>
 </div>
 
 <?php

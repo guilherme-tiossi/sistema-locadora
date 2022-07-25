@@ -18,6 +18,16 @@ function verMenosFilmes(){
   document.getElementById("teste1").style.display = "block";
 }
 
+function verMaisAdmins() {
+  document.getElementById("menosadmins").style.display = "none";
+  document.getElementById("maisadmins").style.display = "block";
+}
+
+function verMenosAdmins(){
+  document.getElementById("maisadmins").style.display = "none";
+  document.getElementById("menosadmins").style.display = "block";
+}
+
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
