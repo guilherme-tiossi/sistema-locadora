@@ -181,4 +181,23 @@ function exibirFilmesALugadosUser(){
     echo "</tr> </tbody> </table> </div>";
 }
 
+function exibirFilmesIndex(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
+    $stmt->execute();
+    echo "<div class='pesquisafilmes' id='padrao'> 
+    <h2 class='titulo2'> FILMES PARA ALUGAR </h2>
+    <table class='tabela2'> <thead>
+    <th> Título </th>
+    <th> Gênero </th>
+    <th> Preço </th>
+    </thead> <tbody>";
+    while($row = $stmt -> fetch(PDO::FETCH_BOTH)){
+        echo "<tr> <td> <a href='cadastro.php'> $row[0] </a> </td>
+                   <td> <a href='cadastro.php'> $row[1] </a> </td>
+                   <td> <a href='cadastro.php'> R$15,00 </a> </td>";
+    }
+    echo "</tr> </tbody> </table> </div>";
+}
+
 ?>
