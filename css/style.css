@@ -53,6 +53,23 @@ body{
   margin-bottom: 10vh;
 }
 
+.divfilmesuser {
+  width: 98%;
+  height: 100%;
+  border: 1px solid black;
+  margin: 1%;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
+}
+
+.pesquisafilmes {
+  display: table-cell;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 30%;
+  height: 100%;
+  background-image: linear-gradient(#e6e5ea, #c2c1ca, #e6e5ea);
+  margin-bottom: 10vh;
+}
 
 .form{
   margin-right: 20%;
@@ -367,3 +384,4 @@ a{
 .form-popup {
   display: none;
 }
+

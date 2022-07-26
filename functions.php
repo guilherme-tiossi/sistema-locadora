@@ -141,10 +141,44 @@ function exibirAdmins(){
     }
     echo "</tr> </tbody> </table> <button class='vermais' onclick='verMenosAdmins()' value='vermais'> Ver menos </button> </div>";
 }
+
+
+function exibirFilmesUser(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
+    $stmt->execute();
+    echo "<div class='pesquisafilmes' id='padrao'> 
+    <h2 class='titulo2'> FILMES PARA ALUGAR </h2>
+    <table class='tabela2'> <thead>
+    <th> Título </th>
+    <th> Gênero </th>
+    <th> Preço </th>
+    </thead> <tbody>";
+    while($row = $stmt -> fetch(PDO::FETCH_BOTH)){
+        echo "<tr> <td> $row[0] </td>
+                   <td> $row[1] </td>
+                   <td> R$15,00 </td>";
+    }
+    echo "</tr> </tbody> </table> </div>";
+}
+
+function exibirFilmesALugadosUser(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero  WHERE tbfilmes.titulo_filme LIKE '%django%' ORDER BY id_filme DESC");
+    $stmt->execute();
+    echo "<div class='pesquisafilmes' id='padrao'> 
+    <h2 class='titulo2'> FILMES ALUGADOS </h2>
+    <table class='tabela2'> <thead>
+    <th> Título </th>
+    <th> Gênero </th>
+    <th> Preço </th>
+    </thead> <tbody>";
+    while($row = $stmt -> fetch(PDO::FETCH_BOTH)){
+        echo "<tr> <td> $row[0] </td>
+                   <td> $row[1] </td>
+                   <td> R$15,00 </td>";
+    }
+    echo "</tr> </tbody> </table> </div>";
+}
+
 ?>
-
-
-
-
-
-

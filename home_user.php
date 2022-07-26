@@ -16,4 +16,11 @@ include("functions.php");
     <a href="logout.php"> Sair </a>
     <div class= "div1"> </div>
 </head>
-
+<body>
+<div class='divfilmesuser'> 
+<?php   
+    exibirFilmesUser(); exibirFilmesAlugadosUser();
+?>
+</div>
+</body>
+</html>
