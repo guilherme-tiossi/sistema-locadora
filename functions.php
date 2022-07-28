@@ -1,7 +1,6 @@
 <?php
 include("conexao.php");
-
-$adm = $_GET['adm'];
+$id = $_SESSION['id_user'];
 
 function exibirGeneros(){
     global $pdo;
@@ -145,8 +144,9 @@ function exibirAdmins(){
 
 function exibirFilmesUser(){
     global $pdo;
-    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
-    $stmt->execute();
+    global $id;
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero, tbfilmes.id_filme FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
+    $stmt->execute();   
     echo "<div class='pesquisafilmes' id='padrao'> 
     <h2 class='titulo2'> FILMES PARA ALUGAR </h2>
     <table class='tabela2'> <thead>
@@ -155,7 +155,7 @@ function exibirFilmesUser(){
     <th> Preço </th>
     </thead> <tbody>";
     while($row = $stmt -> fetch(PDO::FETCH_BOTH)){
-        echo "<tr> <td> $row[0] </td>
+        echo "<tr> <td> <a href='exec_aluguel.php?usuario=$id&filme=$row[2]'> $row[0] </a> </td>
                    <td> $row[1] </td>
                    <td> R$15,00 </td>";
     }

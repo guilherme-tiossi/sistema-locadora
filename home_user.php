@@ -2,6 +2,7 @@
 include("conexao.php");
 include("verificacao_user.php");
 include("functions.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +18,9 @@ include("functions.php");
     <div class= "div1"> </div>
 </head>
 <body>
-<div class='divfilmesuser'> 
+<div > 
 <?php   
-    exibirFilmesUser(); exibirFilmesAlugadosUser();
+    exibirFilmesUser();
 ?>
 </div>
 </body>

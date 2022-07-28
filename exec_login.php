@@ -10,11 +10,15 @@ $senha = $_POST['senha'];
 
 foreach ($stmt as $row){
     $adm = $row['adm'];
+    $id = $row['id_user'];
 }
+echo $adm;
+echo $id;
 
 if ($count == 1 && $adm == 2){
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
+    $_SESSION['id_user'] = $id;
     header("Location: home_adm.php");
     exit();
 }
@@ -30,6 +34,7 @@ else if ($count ==1 && $adm == 1){
 else if ($count ==1 && $adm == 0){
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
+    $_SESSION['id_user'] = $id;
     header("Location: home_user.php");
     exit();
 }

@@ -17,9 +17,10 @@ include("functions.php");
     </div>
 </head>
 <body> 
+	<div class="pesquisafilmes">
 	<?php 
 	exibirFilmesIndex();
 	?>
-
+	</div>
 </body>
 </html>
