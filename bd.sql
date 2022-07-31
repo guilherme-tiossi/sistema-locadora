@@ -31,13 +31,16 @@ CREATE TABLE `tbalugueis` (
  `id_aluguel` int NOT NULL AUTO_INCREMENT,
  `id_usuario` int NOT NULL,
  `id_filme` int NOT NULL,
+ `id_genero` int NOT NULL,
  `validade` date NOT NULL,
  PRIMARY KEY (`id_aluguel`),
  KEY `fk_idfilme` (`id_filme`),
  KEY `fk_iduser` (`id_usuario`),
+ KEY `fk_idgenero.alugueis` (`id_genero`),
  CONSTRAINT `fk_idfilme` FOREIGN KEY (`id_filme`) REFERENCES `tbfilmes` (`id_filme`) ON DELETE CASCADE ON UPDATE CASCADE,
+ CONSTRAINT `fk_idgenero.alugueis` FOREIGN KEY (`id_genero`) REFERENCES `tbgeneros` (`id_genero`) ON DELETE CASCADE ON UPDATE CASCADE,
  CONSTRAINT `fk_iduser` FOREIGN KEY (`id_usuario`) REFERENCES `tbusuarios` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 insert into tbgeneros (genero) values
 ('Comédia'),

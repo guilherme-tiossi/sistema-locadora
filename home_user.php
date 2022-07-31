@@ -21,6 +21,7 @@ include("functions.php");
 <div > 
 <?php   
     exibirFilmesUser();
+    exibirFilmesALugadosUser();
 ?>
 </div>
 </body>

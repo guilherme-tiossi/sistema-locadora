@@ -145,7 +145,7 @@ function exibirAdmins(){
 function exibirFilmesUser(){
     global $pdo;
     global $id;
-    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero, tbfilmes.id_filme FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero, tbfilmes.id_filme, tbfilmes.id_genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero ORDER BY id_filme DESC");
     $stmt->execute();   
     echo "<div class='pesquisafilmes' id='padrao'> 
     <h2 class='titulo2'> FILMES PARA ALUGAR </h2>
@@ -155,7 +155,7 @@ function exibirFilmesUser(){
     <th> Preço </th>
     </thead> <tbody>";
     while($row = $stmt -> fetch(PDO::FETCH_BOTH)){
-        echo "<tr> <td> <a href='exec_aluguel.php?usuario=$id&filme=$row[2]'> $row[0] </a> </td>
+        echo "<tr> <td> <a href='exec_aluguel.php?usuario=$id&filme=$row[2]&genero=$row[3]'> $row[0] </a> </td>
                    <td> $row[1] </td>
                    <td> R$15,00 </td>";
     }
@@ -164,7 +164,8 @@ function exibirFilmesUser(){
 
 function exibirFilmesALugadosUser(){
     global $pdo;
-    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbfilmes JOIN tbgeneros ON tbgeneros.id_genero = tbfilmes.id_genero  WHERE tbfilmes.titulo_filme LIKE '%django%' ORDER BY id_filme DESC");
+    global $id;
+    $stmt = $pdo->prepare("SELECT tbfilmes.titulo_filme, tbgeneros.genero FROM tbalugueis JOIN tbfilmes ON tbalugueis.id_filme = tbfilmes.id_filme JOIN tbgeneros ON tbalugueis.id_genero = tbgeneros.id_genero WHERE (id_usuario = '$id')");
     $stmt->execute();
     echo "<div class='pesquisafilmes' id='padrao'> 
     <h2 class='titulo2'> FILMES ALUGADOS </h2>
